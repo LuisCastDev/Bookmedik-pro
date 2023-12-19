@@ -254,7 +254,7 @@ $(document).ready(function(){
 <div class="login-box">
       <div class="login-logo">
         <h4>ACCESO AL MEDICO</h4>
-        <a href="./?view=pacientlogin"><b>BOOKMEDIK</b>PRO</a>
+        <a href="./?view=mediclogin"><b>BOOKMEDIK</b>PRO</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <form action="./?action=processloginmedic" method="post">

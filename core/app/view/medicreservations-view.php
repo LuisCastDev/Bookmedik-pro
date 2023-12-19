@@ -117,8 +117,12 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 				<td><?php echo StatusData::getById($user->status_id)->name;?></td>
 				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
 				<td style="width:230px;">
-								<a href="index.php?view=openchat2&pacient_id=<?php echo $pacient->id;?>" class="btn btn-info btn-xs">Chat</a>
-<a href="./?view=pacient&id=<?php echo $pacient->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-folder-open"></i> Archivos</a>
+								<a href="index.php?view=openchat2&pacient_id=<?php echo $pacient->id;?>" class="fa fa-pencil-square btn btn-info btn-xs">Consultar</a>
+								
+<a href="./?view=pacient&id=
+<?php echo $pacient->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-folder-open"></i> Archivos</a>
+
+
 				<a href="index.php?view=editreservation&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
 				<a href="index.php?action=delreservation&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
 				

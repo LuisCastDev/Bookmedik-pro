@@ -25,7 +25,7 @@ if($found==true) {
 //	setcookie('userid',$userid);
 //	print $_SESSION['userid'];
 	print "Cargando ... $user";
-	print "<script>window.location='index.php?view=medichome';</script>";
+	print "<script>window.location='index.php?view=medicreservations';</script>";
 }else {
 	print "<script>window.location='index.php?view=mediclogin';</script>";
 }
