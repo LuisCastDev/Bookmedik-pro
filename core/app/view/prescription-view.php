@@ -8,7 +8,7 @@ $payments = PaymentData::getAll();
 ?>
 <div class="row">
 	<div class="col-md-10">
-	<h1>Editar Cita</h1>
+	<h1>Record Medico</h1>
   <hr>
 <form class="form-horizontal" role="form" method="post" action="./?action=updatereservation">
   <div class="form-group">
@@ -39,7 +39,7 @@ $payments = PaymentData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Medico</label>
     <div class="col-lg-10">
-<select name="medic_id" class="form-control" required>
+<select name="medic_id" class="form-control" required disabled>
 <option value="">-- SELECCIONE --</option>
   <?php foreach($medics as $p):?>
     <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->medic_id){ echo "selected"; }?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
@@ -89,26 +89,9 @@ $payments = PaymentData::getAll();
 </select>
     </div>
   </div>
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Estado del pago</label>
-    <div class="col-lg-10">
-<select name="payment_id" class="form-control" required>
-  <?php foreach($payments as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->payment_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
-  <?php endforeach; ?>
-</select>
-    </div>
-  </div>
+ 
 
-    <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Costo</label>
-    <div class="col-lg-10">
-<div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-  <input type="text" class="form-control" value="<?php echo $reservation->price;?>" name="price" placeholder="Costo">
-</div>
-    </div>
-  </div>
+    
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

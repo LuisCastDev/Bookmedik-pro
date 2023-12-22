@@ -155,7 +155,7 @@ $(document).ready(function(){
             <?php elseif(isset($_SESSION["medic_id"])):?>
             <li><a href="./?view=medichome"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
             <li><a href="./?view=medicreservations"><i class='fa fa-calendar'></i> <span>Citas</span></a></li>
-            <li><a href="./?view=medicreservations"><i class='far fa-edit'></i> <span>Recetas</span></a></li>
+            <li><a href="./?view=medicreservations"><i class='far fa-edit'></i> <span>Consultar paciente</span></a></li>
             <li><a href="./?view=medicreports"><i class='fa fa-area-chart'></i> <span>Reportes</span></a></li>
             <?php endif; ?>
 
