@@ -12,7 +12,7 @@ $payments = PaymentData::getAll();
   <hr>
 <form class="form-horizontal" role="form" method="post" action="./?action=updatereservation">
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Cod.</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Cedula o Pasaporte.</label>
     <div class="col-lg-10">
       <input type="text" name="no" value="<?php echo $reservation->no; ?>"  class="form-control" id="inputEmail1" placeholder="Cod.">
     </div>
@@ -50,8 +50,23 @@ $payments = PaymentData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Fecha/Hora</label>
     <div class="col-lg-5">
-      <input type="text" name="date_at" value="<?php echo $reservation->date_at; ?>" required class="pickadate form-control" id="inputEmail1" placeholder="Fecha">
+     
+      <input type="text" name="date_at" id="date_at" default value="" required class="pickadate form-control"  placeholder="Fecha">
     </div>
+    <script>
+        const fechaActual = new Date();
+        
+      // Obtener el año, mes y día
+      const year = fechaActual.getFullYear();
+      const month = String(fechaActual.getMonth() + 1).padStart(2, '0'); // Sumar 1 al mes ya que los meses van de 0 a 11
+      const day = String(fechaActual.getDate()).padStart(2, '0');
+      
+      // Formatear la fecha como "yyyy-mm-dd"
+      const fechaFormateada = `${year}-${month}-${day}`;
+
+      document.getElementById("date_at").value=fechaFormateada;
+     
+        </script>
     <div class="col-lg-5">
       <input type="text" name="time_at" value="<?php echo $reservation->time_at; ?>" required class="pickatime form-control" id="inputEmail1" placeholder="Hora">
     </div>
@@ -79,16 +94,7 @@ $payments = PaymentData::getAll();
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>
-    <div class="col-lg-10">
-<select name="status_id" class="form-control" required>
-  <?php foreach($statuses as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->status_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
-  <?php endforeach; ?>
-</select>
-    </div>
-  </div>
+
  
 
     
@@ -96,7 +102,7 @@ $payments = PaymentData::getAll();
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
     <input type="hidden" name="id" value="<?php echo $reservation->id; ?>">
-      <button type="submit" class="btn btn-success">Actualizar Cita</button>
+      <button type="submit" class="btn btn-success">Generar receta</button>
     </div>
   </div>
 </form>

@@ -121,7 +121,7 @@ $(document).ready(function(){
           <ul class="sidebar-menu">
             <?php if(isset($_SESSION["user_id"])):?>
 
-              <?php $u = UserData::getById($_SESSION["user_id"]); ?>
+              <?php $u = UserData::getById($_SESSION["user_id"] ); ?>
             <li><a href="./index.php?view=home"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
             <?php if(Core::$user->view_reservations):?>
             <li><a href="./index.php?view=calendar"><i class='fa fa-calendar'></i> <span>Calendario</span></a></li>
@@ -153,10 +153,14 @@ $(document).ready(function(){
             <li><a href="./?view=pacientnewreservation"><i class='fa fa-asterisk'></i> <span>Nueva Cita</span></a></li>
             <li><a href="./?view=pacientreservations"><i class='fa fa-calendar'></i> <span>Citas</span></a></li>
             <?php elseif(isset($_SESSION["medic_id"])):?>
+           
+            <li><a href="./?view=newreservation2"><i class='fa fa-asterisk'></i> <span>Nueva Cita</span></a></li>
+            
             <li><a href="./?view=medichome"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
             <li><a href="./?view=medicreservations"><i class='fa fa-calendar'></i> <span>Citas</span></a></li>
             <li><a href="./?view=medicreservations"><i class='far fa-edit'></i> <span>Consultar paciente</span></a></li>
             <li><a href="./?view=medicreports"><i class='fa fa-area-chart'></i> <span>Reportes</span></a></li>
+            
             <?php endif; ?>
 
           </ul><!-- /.sidebar-menu -->
