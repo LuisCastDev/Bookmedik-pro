@@ -53,6 +53,7 @@ $(document).ready(function(){
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>B</b>P</span>
           <!-- logo for regular state and mobile devices -->
+             <!-- Comentario para verificar el funcionamiento de github -->
           <span class="logo-lg"><b>BOOKMEDIK</b>PRO</span>
         </a>
 
