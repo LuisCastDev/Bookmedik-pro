@@ -72,26 +72,28 @@ $payments = PaymentData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Nota</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Medicacion</label>
     <div class="col-lg-4">
     <textarea class="form-control" name="note" placeholder="Nota"><?php echo $reservation->note;?></textarea>
     </div>
-    <label for="inputEmail1" class="col-lg-2 control-label">Síntomas e Historia de la Enfermedad</label>
+    <!-- <label for="inputEmail1" class="col-lg-2 control-label">Síntomas e Historia de la Enfermedad</label>
     <div class="col-lg-4">
     <textarea class="form-control" name="sick" placeholder="Síntomas e Historia de la Enfermedad"><?php echo $reservation->sick;?></textarea>
-    </div>
+    </div> -->
   </div>
 
 
       <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Sintomas</label>
-    <div class="col-lg-4">
-    <textarea class="form-control" name="symtoms" placeholder="Sintomas"><?php echo $reservation->symtoms;?></textarea>
-    </div>
-    <label for="inputEmail1" class="col-lg-2 control-label">Antecedentes del paciente</label>
-    <div class="col-lg-4">
-    <textarea class="form-control" name="medicaments" placeholder="Antecedentes del paciente"><?php echo $reservation->medicaments;?></textarea>
-    </div>
+    <!-- <label for="inputEmail1" class="col-lg-2 control-label">Sintomas</label> -->
+    <!-- <div class="col-lg-4">
+    <textarea class="form-control" name="symtoms" placeholder="Sintomas">
+      <?php echo $reservation->symtoms;?>
+    </textarea>
+    </div> -->
+    <!-- <label for="inputEmail1" class="col-lg-2 control-label">Medicacion</label> -->
+    <!-- <div class="col-lg-4">
+    <textarea class="form-control" name="medicaments" placeholder="Ingrese la medicacion"><?php echo $reservation->medicaments;?></textarea>
+    </div> -->
   </div>
 
 
