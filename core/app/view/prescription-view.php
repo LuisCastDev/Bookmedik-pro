@@ -28,7 +28,7 @@ $payments = PaymentData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Paciente</label>
     <div class="col-lg-10">
-<select name="pacient_id" class="form-control" required>
+<select name="pacient_id" class="form-control" required disabled>
 <option value="">-- SELECCIONE --</option>
   <?php foreach($pacients as $p):?>
     <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->pacient_id){ echo "selected"; }?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>

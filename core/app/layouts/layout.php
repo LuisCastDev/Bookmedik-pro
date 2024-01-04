@@ -161,7 +161,7 @@ $(document).ready(function(){
             
             
             <li><a href="./?view=medicreservations"><i class='fa fa-calendar'></i> <span>Citas</span></a></li>
-            <li><a href="./?view=medicreservations"><i class='far fa-edit'></i> <span>Consultar paciente</span></a></li>
+            <!-- <li><a href="./?view=medicreservations"><i class='far fa-edit'></i> <span>Consultar paciente</span></a></li> -->
             <li><a href="./?view=medicreports"><i class='fa fa-area-chart'></i> <span>Reportes</span></a></li>
             
             <?php endif; ?>
