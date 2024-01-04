@@ -147,7 +147,7 @@ $.get("./?action=gethours","medic_id="+$("#medic_id").val()+"&date_at="+$("#date
 
 
   }
-//        console.log((data));
+        console.log((data));
     }
   }
   );
