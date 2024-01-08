@@ -72,9 +72,9 @@ $payments = PaymentData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Medicacion</label>
-    <div class="col-lg-4">
-    <textarea class="form-control" name="note" placeholder="Nota"><?php echo $reservation->note;?></textarea>
+    <label for="inputEmail1" class="col-lg-2 control-label">Medicacion / Receta</label>
+    <div class="col-lg-10">
+    <textarea class="form-control" name="note" placeholder="Aceptaminofen 500mg uso VO 1 C/12h  x 3 dias"><?php echo $reservation->note;?></textarea>
     </div>
     <!-- <label for="inputEmail1" class="col-lg-2 control-label">Síntomas e Historia de la Enfermedad</label>
     <div class="col-lg-4">
