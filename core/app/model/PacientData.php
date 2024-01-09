@@ -16,10 +16,27 @@ class PacientData {
 		Executor::doit($sql);
 	}
 
+	// public static function delById($id){
+	// 	$sql = "delete from ".self::$tablename." where id=$id";
+	// 	Executor::doit($sql);
+	// }
+
 	public static function delById($id){
-		$sql = "delete from ".self::$tablename." where id=$id";
-		Executor::doit($sql);
+		try {
+			$sql = "DELETE FROM " . self::$tablename . " WHERE id = :id";
+			$params = array(":id" => $id);
+	
+			Executor::doit($sql, $params);
+			// Suponiendo que Executor::doit() es un método que ejecuta consultas SQL con parámetros y maneja excepciones
+		} catch (Exception $e) {
+			// Manejo de la excepción
+			echo "Error al eliminar el registro: " . $e->getMessage();
+		}
 	}
+	
+
+
+
 	public function del(){
 		$sql = "delete from ".self::$tablename." where id=$this->id";
 		Executor::doit($sql);

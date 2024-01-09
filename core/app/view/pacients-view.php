@@ -1,4 +1,4 @@
-<?php if(!Core::$user->view_pacients){ Core::redir("./?view=home"); } ?>
+ <!--  if(!Core::$user->view_pacients){ Core::redir("./?view=home"); } ?> -->
 <section class="content">
 <div class="row">
 	<div class="col-md-12">
@@ -54,13 +54,13 @@
 				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->phone; ?></td>
 				<td style="width:270px;">
-				<a href="cesion.php?id=<?php echo $user->id;?>" target="_blank" class="btn btn-info btn-xs">Cesion de Datos</a>
-				<a href="index.php?view=pacienthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
-					<?php if(Core::$user->edit_pacients): ?>
+				<!-- <a href="cesion.php?id= ?php echo $user->id;?>" target="_blank" class="btn btn-info btn-xs">Cesion de Datos</a> -->
+				<a href="index.php?view=pacienthistory&id=<?php echo $user->id;?>" class="btn btn-info btn-xs">Historial</a>
+					
 
 				<a href="index.php?view=editpacient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
 				<a href="index.php?view=delpacient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
-			<?php endif; ?>
+			
 				</td>
 				</tr>
 				<?php

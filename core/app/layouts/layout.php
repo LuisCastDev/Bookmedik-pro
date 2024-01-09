@@ -157,6 +157,7 @@ $(document).ready(function(){
            
               <li><a href="./?view=medichome"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
               
+            <li><a href="./?view=pacients"><i class='fa fa-male'></i> <span>Pacientes</span></a></li>
             <li><a href="./?view=newreservation2"><i class='fa fa-asterisk'></i> <span>Nueva Cita</span></a></li>
             
             

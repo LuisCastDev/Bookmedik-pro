@@ -41,7 +41,7 @@ $payments = PaymentData::getAll();
 <select name="category_id" id="category_id" class="form-control" required>
 <option value="">-- SELECCIONE --</option>
 <?php foreach(CategoryData::getAll() as $p):?>
-  <option value="<?php echo $p->id; ?>"><?php if(MedicData::getById($_SESSION["medic_id"])->category_id==$p->id){echo "selected";} ?> <?php echo $p->name;   ?></option>
+  <option value="<?php echo $p->id; ?>"><?php if(MedicData::getById($_SESSION["medic_id"])->category_id==$p->id){echo "";} ?> <?php echo $p->name;   ?></option>
   <?php endforeach; ?>
 </select>
     </div>
@@ -69,7 +69,7 @@ $payments = PaymentData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nota</label>
     <div class="col-lg-4">
-    <textarea class="form-control" name="note" placeholder="Nota"></textarea>
+    <textarea class="form-control" name="note" placeholder="Nota" disabled></textarea>
     </div>
     <label for="inputEmail1" class="col-lg-2 control-label">Síntomas e Historia de la Enfermedad</label>
     <div class="col-lg-4">

@@ -10,7 +10,7 @@ class Core {
 	public static $root = "";
 
 
-	public static $user = null;
+	public static $user = 1;
 	public static $debug_sql = false;
 	public static $smtp_email = "";
 	public static $smtp_password = "";
