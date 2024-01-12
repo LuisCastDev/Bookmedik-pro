@@ -13,15 +13,14 @@ $payments = PaymentData::getAll();
 <div class="col-md-10">
 <h1>Nueva Cita</h1>
 <form class="form-horizontal" role="form" method="post" action="./?action=addreservation" id="newreservation">
-  <div class="form-group">
-    <div class="col-lg-3 col-lg-offset-2">
-    <label for="inputEmail1" class="control-label">Cod.</label>
-      <input type="text" name="no" class="form-control" id="inputEmail1" placeholder="Cod.">
+<div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Asunto</label>
+    <div class="col-lg-10">
+    
+    
+         <input type="text" name="title" class="form-control" id="inputEmail1" placeholder="Asunto">
     </div>
-    <div class="col-lg-7">
-    <label for="inputEmail1" class="control-label">Asunto</label>
-      <input type="text" name="title" required class="form-control" id="inputEmail1" placeholder="Asunto">
-    </div>
+ 
 
   </div>
   <div class="form-group">
@@ -66,7 +65,7 @@ $payments = PaymentData::getAll();
 </select>
     </div>
   </div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nota</label>
     <div class="col-lg-4">
     <textarea class="form-control" name="note" placeholder="Nota" disabled></textarea>
@@ -85,7 +84,7 @@ $payments = PaymentData::getAll();
     <div class="col-lg-4">
     <textarea class="form-control" name="medicaments" placeholder="Antecedentes del paciente"></textarea>
     </div>
-  </div>
+  </div> -->
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>
