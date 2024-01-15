@@ -72,9 +72,31 @@ $payments = PaymentData::getAll();
     </div>
   </div>
   <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Nota</label>
+    <div class="col-lg-4">
+    <textarea class="form-control" name="note" placeholder="Nota"><?php echo $reservation->note;?></textarea>
+    </div>
+    <label for="inputEmail1" class="col-lg-2 control-label">Síntomas e Historia de la Enfermedad</label>
+    <div class="col-lg-4">
+    <textarea class="form-control" name="sick" placeholder="Síntomas e Historia de la Enfermedad"><?php echo $reservation->sick;?></textarea>
+    </div>
+  </div>
+
+
+      <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Sintomas</label>
+    <div class="col-lg-4">
+    <textarea class="form-control" name="symtoms" placeholder="Sintomas"><?php echo $reservation->symtoms;?></textarea>
+    </div>
+    <label for="inputEmail1" class="col-lg-2 control-label">Antecedentes del paciente</label>
+    <div class="col-lg-4">
+    <textarea class="form-control" name="note" placeholder="Antecedentes del paciente"><?php echo $reservation->note;?></textarea>
+    </div>
+  </div>
+  <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Medicacion / Receta</label>
     <div class="col-lg-10">
-    <textarea class="form-control" name="note" placeholder="Aceptaminofen 500mg uso VO 1 C/12h  x 3 dias"><?php echo $reservation->note;?></textarea>
+    <textarea class="form-control" name="medicaments" placeholder="Aceptaminofen 500mg uso VO 1 C/12h  x 3 dias"><?php echo $reservation->medicaments;?></textarea>
     </div>
     <!-- <label for="inputEmail1" class="col-lg-2 control-label">Síntomas e Historia de la Enfermedad</label>
     <div class="col-lg-4">
@@ -96,6 +118,35 @@ $payments = PaymentData::getAll();
     </div> -->
   </div>
 
+  <div class="form-group" hidden>
+    <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>
+    <div class="col-lg-10">
+<select name="status_id" class="form-control" required>
+  <?php foreach($statuses as $p):?>
+    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->status_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
+  <?php endforeach; ?>
+</select>
+    </div>
+  </div>
+  <div class="form-group" hidden>
+    <label for="inputEmail1" class="col-lg-2 control-label">Costo</label>
+    <div class="col-lg-10">
+<div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+  <input type="text" class="form-control" value="<?php echo $reservation->price;?>" name="price" placeholder="Costo">
+</div>
+    </div>
+  </div>
+  <div class="form-group" hidden>
+    <label for="inputEmail1" class="col-lg-2 control-label">Estado del pago</label>
+    <div class="col-lg-10">
+<select name="payment_id" class="form-control" required>
+  <?php foreach($payments as $p):?>
+    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->payment_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
+  <?php endforeach; ?>
+</select>
+    </div>
+  </div>
 
  
 
