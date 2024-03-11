@@ -65,7 +65,7 @@ $payments = PaymentData::getAll();
 </select>
     </div>
   </div>
-  <!-- <div class="form-group">
+  <div class="form-group" hidden>
     <label for="inputEmail1" class="col-lg-2 control-label">Nota</label>
     <div class="col-lg-4">
     <textarea class="form-control" name="note" placeholder="Nota" disabled></textarea>
@@ -75,7 +75,7 @@ $payments = PaymentData::getAll();
     <textarea class="form-control" name="sick" placeholder="Síntomas e Historia de la Enfermedad"></textarea>
     </div>
   </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
     <label for="inputEmail1" class="col-lg-2 control-label">Sintomas</label>
     <div class="col-lg-4">
     <textarea class="form-control" name="symtoms" placeholder="Sintomas"></textarea>
@@ -84,9 +84,9 @@ $payments = PaymentData::getAll();
     <div class="col-lg-4">
     <textarea class="form-control" name="medicaments" placeholder="Antecedentes del paciente"></textarea>
     </div>
-  </div> -->
+  </div>
 
-  <div class="form-group">
+  <div class="form-group" hidden>
     <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>
     <div class="col-lg-10">
 <select name="status_id" class="form-control" required>

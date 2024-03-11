@@ -1,4 +1,7 @@
 <?php
+// require_once './core/controller/Executor2.php';
+
+
 class ReservationData {
 	public static $tablename = "reservation";
 
@@ -16,13 +19,37 @@ class ReservationData {
 	public function getStatus(){ return StatusData::getById($this->status_id); }
 	public function getPayment(){ return PaymentData::getById($this->payment_id); }
 
+	
+	// public function add(){
+	// 	$servername = "localhost";
+	// 	$username = "root";
+	// 	$password = "";
+	// 	$dbname = "bookmedikpro";
+		
+	// 	try{
+	// 		$executor2 = new $Executor2($servername,$username,$password,$dbname);
+	// 	$query = "insert into reservation (no,title,note,medic_id,date_at,time_at,pacient_id,user_id,price,status_id,payment_id,sick,symtoms,medicaments,created_at) values (:no,:title,:note,:medic,:date_at,:time_at,:pacient_id,:pacient_id,user_id,:price,:status_id,:payment_id,:sick,:symtoms,:medicaments,:created_at) ";
+	// 	$params = [":no"=>$this->no,":title"=>$this->title,":note"=>$this->note,
+	// 	":medic_id"=>$this->medic_id,":date_at"=>$this->date_at,":time_at"=>$this->time_at,":pacient_id"=>$this->pacient_id,":user_id"=>1,":price"=>$this->price,":status_id"=>$this->status_id,$this->payment_id,$this->sick,$this->symtoms,$this->medicaments,$this->created_at];
+	// 	return Executor::doit($sql);
+	// }
+
+
+	
+	// }
+
 	public function add(){
+		
 		echo"".$this->name."".$this->lastname;
 		$sql = "insert into reservation (no,title,note,medic_id,date_at,time_at,pacient_id,user_id,price,status_id,payment_id,sick,symtoms,medicaments,created_at) ";
-		$sql .= "value (\"$this->no\",\"$this->title\",\"$this->note\",\"$this->medic_id\",\"$this->date_at\",\"$this->time_at\",$this->pacient_id,\1,\"$this->price\",$this->status_id,$this->payment_id,\"$this->sick\",\"$this->symtoms\",\"$this->medicaments\",$this->created_at)";
+		$sql .= "value (\"$this->no\",\"$this->title\",\"$this->note\",\"$this->medic_id\",\"$this->date_at\",\"$this->time_at\",$this->pacient_id,1,\"$this->price\",$this->status_id,$this->payment_id,\"$this->sick\",\"$this->symtoms\",\"$this->medicaments\",$this->created_at)";
 		return Executor::doit($sql);
-	}
+	
 
+
+
+	}
+	
 	public static function delById($id){
 		$sql = "delete from ".self::$tablename." where id=$id";
 		Executor::doit($sql);
@@ -34,7 +61,7 @@ class ReservationData {
 
 // partiendo de que ya tenemos creado un objecto ReservationData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set no=\"$this->no\",title=\"$this->title\",pacient_id=\"$this->pacient_id\",medic_id=\"$this->medic_id\",date_at=\"$this->date_at\",time_at=\"$this->time_at\",note=\"$this->note\",sick=\"$this->sick\",symtoms=\"$this->symtoms\",medicaments=\"$this->medicaments\",status_id=\"$this->status_id\",payment_id=\"$this->payment_id\",price=\"$this->price\" where id=$this->id";
+		$sql = "update ".self::$tablename." set no=\"$this->no\",title=\"$this->title\",pacient_id=\"$this->pacient_id\",medic_id=\"$this->medic_id\",date_at=\"$this->date_at\",time_at=\"$this->time_at\",note=\"$this->note\",sick=\"$this->sick\",symtoms=\"$this->symtoms\",medicaments=\"$this->medicaments\",record=\"$this->record\",status_id=\"$this->status_id\",payment_id=\"$this->payment_id\",price=\"$this->price\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -66,6 +93,13 @@ class ReservationData {
 
 	public static function getPendings(){
 		$sql = "select * from ".self::$tablename." where status_id=1";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new ReservationData());
+	}
+
+
+	public static function getPendingsDoctor($id){
+		$sql = "select * from ".self::$tablename." where status_id=1 and medic_id=$id";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}

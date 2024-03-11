@@ -18,6 +18,7 @@
 <input type="hidden" name="view" value="medicreservations">
         <?php
 $pacients = PacientData::getAll();
+
 $medics = MedicData::getAll();
         ?>
 
@@ -89,7 +90,10 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 		$users = ReservationData::getBySQL($sql);
 
 }else{
-		$users = ReservationData::getAllByMedicId($_SESSION["medic_id"]);
+	//	$users = ReservationData::getAllByMedicId($_SESSION["medic_id"]);
+		$users = ReservationData::getPendingsDoctor($_SESSION["medic_id"]);
+
+
 
 }
 		if(count($users)>0){
