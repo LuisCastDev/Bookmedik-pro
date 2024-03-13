@@ -34,10 +34,10 @@ $payments = PaymentData::getAll();
 </select>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group" hidden>
     <div class="col-lg-3 col-md-offset-2">
     <label for="inputEmail1" class="control-label">Area Medica</label>
-<select name="category_id" id="category_id" class="form-control" required>
+<select name="category_id" id="category_id" class="form-control" >
 <option value="">-- SELECCIONE --</option>
 <?php foreach(CategoryData::getAll() as $p):?>
   <option value="<?php echo $p->id; ?>"><?php if(MedicData::getById($_SESSION["medic_id"])->category_id==$p->id){echo "";} ?> <?php echo $p->name;   ?></option>
@@ -49,7 +49,7 @@ $payments = PaymentData::getAll();
     <div class="col-lg-7">
     <label for="inputEmail1" class="control-label">Medico</label>
 <select name="medic_id" id="medic_id" class="form-control" required>
-<option value="">-- SELECCIONE AREA--</option>
+<option value="<?php echo $_SESSION["medic_id"]?>"></option>
 </select>
     </div>
   </div>

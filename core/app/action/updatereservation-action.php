@@ -61,10 +61,10 @@ for ($i = 0; $i < strlen($textoLargo); $i += $limiteCaracteres) {
 	
 	
     // Agregar la parte del texto a la celda
-    $pdf->Cell(18, 74,utf8_decode($parteTexto));
+    $pdf->Cell(20, 74,utf8_decode($parteTexto));
 
     // Mover a la siguiente posición
-    $pdf->SetXY(18,$y + 4);
+    $pdf->SetXY(20,$y + 4);
 
     // Actualizar la posición
     $x = $pdf->GetX();
