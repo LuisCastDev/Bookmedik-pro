@@ -120,7 +120,7 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 				<td><?php echo $medic->name." ".$medic->lastname; ?></td>
 				<td><?php echo StatusData::getById($user->status_id)->name;?></td>
 				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
-				<td style="width:230px;">
+				<td style="width:20%;">
 								<a href="index.php?view=prescription&id=<?php echo $user->id;?>" class="fa fa-pencil-square btn btn-info btn-xs">Consultar</a>
 								
 								
@@ -129,7 +129,7 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 
 
 				<a href="index.php?view=editreservation&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
-				<a href="index.php?action=delreservation&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
+				<a onclick="confirmacion()" href="index.php?action=delreservation&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
 				
 				</td>
 				</tr>
@@ -150,4 +150,15 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 
 	</div>
 </div>
+<script>
+	function confirmacion(){
+		if(confirm("¿Deseas eliminar esta cita?")){
+
+			alert("Cita cancelada!");
+
+
+		}
+	}
+
+</script>
 </section>

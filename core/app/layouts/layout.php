@@ -54,7 +54,7 @@ $(document).ready(function(){
           <span class="logo-mini"><b>B</b>P</span>
           <!-- logo for regular state and mobile devices -->
              <!-- Comentario para verificar el funcionamiento de github -->
-          <span class="logo-lg"><b>BOOKMEDIK</b>PRO</span>
+          <span class="logo-lg"><h4 style="margin-top: 8%"><b>CONTROL PACIENTES</b></h4></span>
         </a>
 
         <!-- Header Navbar -->
@@ -189,8 +189,8 @@ $(document).ready(function(){
         <?php if(isset($_GET["view"]) && $_GET["view"]=="pacientlogin"):?>
 <div class="login-box">
       <div class="login-logo">
-        <h4>ACCESO AL PACIENTE</h4>
-        <a href="./?view=pacientlogin"><b>BOOKMEDIK</b>PRO</a>
+        <h5>ACCESO AL PACIENTE</h5>
+        <a href="./?view=pacientlogin"><b>CONTROL PACIENTE</b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <form action="./?action=processloginpacient" method="post">
@@ -216,7 +216,7 @@ $(document).ready(function(){
 <div class="login-box">
       <div class="login-logo">
         <h4>REGISTRO DE PACIENTES</h4>
-        <a href="./?view=pacientlogin"><b>BOOKMEDIK</b>PRO</a>
+        <a href="./?view=pacientlogin"><b>CONTROL PACIENTES</b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <form action="./?action=processregisterpacient" method="post">
@@ -262,7 +262,7 @@ $(document).ready(function(){
 <div class="login-box">
       <div class="login-logo">
         <h4>ACCESO AL MEDICO</h4>
-        <a href="./?view=mediclogin"><b>BOOKMEDIK</b>PRO</a>
+        <a href="./?view=mediclogin"><b>CONTROL PACIENTES</b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <form action="./?action=processloginmedic" method="post">

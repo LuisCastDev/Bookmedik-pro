@@ -19,7 +19,7 @@ for($i=$sd;$i<=$ed;$i+=(60*60*24)){
 ?>
     <section class="content-header">
       <h1>
-        BookMedik Pro
+        Control Pacientes
         <small>Version 4.0</small>
       </h1>
     </section>

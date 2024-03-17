@@ -49,6 +49,13 @@ class PacientData {
 	}
 
 
+	public static function getRepeated($no){
+		$sql = "select * from ".self::$tablename." where no=$no";
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new PacientData());
+	}
+
+
 	public function update(){
 		$sql = "update ".self::$tablename." set no=\"$this->no\",image=\"$this->image\",name=\"$this->name\",lastname=\"$this->lastname\",address=\"$this->address\",phone=\"$this->phone\",email=\"$this->email\",password=\"$this->password\",gender=\"$this->gender\",day_of_birth=\"$this->day_of_birth\",sick=\"$this->sick\",medicaments=\"$this->medicaments\",alergy=\"$this->alergy\",cp=\"$this->cp\",pob=\"$this->pob\" where id=$this->id";
 		Executor::doit($sql);
