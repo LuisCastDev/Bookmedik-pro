@@ -15,7 +15,7 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">No. Cédula*</label>
     <div class="col-md-6">
-      <input type="text" name="no" class="form-control" id="no" placeholder="No. Cédula">
+      <input type="text"  name="no" class="form-control" id="no" placeholder="No. Cédula">
     </div>
   </div>
   <div class="form-group">
@@ -119,6 +119,7 @@
     </div>
   </div>
 </form>
+
 	</div>
 </div>
 </section>
