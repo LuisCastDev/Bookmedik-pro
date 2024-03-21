@@ -10,9 +10,14 @@ class PacientData {
 		$this->created_at = "NOW()";
 	}
 
+
+	
 	public function add(){
+
+		
 		$sql = "insert into ".self::$tablename." (no,image,name,lastname,gender,day_of_birth,address, cp, pob, phone,email,password,sick,medicaments,alergy,created_at) ";
-		echo $sql .= "value (\"$this->no\",\"$this->image\",\"$this->name\",\"$this->lastname\",\"$this->gender\",\"$this->day_of_birth\",\"$this->address\",\"$this->cp\",\"$this->pob\",\"$this->phone\",\"$this->email\",\"$this->password\",\"$this->sick\",\"$this->medicaments\",\"$this->alergy\",$this->created_at)";
+		$noClean=preg_replace("/[^a-zA-Z0-9]/", '', $this->no);
+		echo $sql .= "value (\"$noClean\",\"$this->image\",\"$this->name\",\"$this->lastname\",\"$this->gender\",\"$this->day_of_birth\",\"$this->address\",\"$this->cp\",\"$this->pob\",\"$this->phone\",\"$this->email\",\"$this->password\",\"$this->sick\",\"$this->medicaments\",\"$this->alergy\",$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -50,14 +55,16 @@ class PacientData {
 
 
 	public static function getRepeated($no){
-		$sql = "select * from ".self::$tablename." where no=$no";
+		$noClean=preg_replace("/[^a-zA-Z0-9]/", '', $no);
+		$sql = "select * from ".self::$tablename." where no=$noClean";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new PacientData());
 	}
 
 
 	public function update(){
-		$sql = "update ".self::$tablename." set no=\"$this->no\",image=\"$this->image\",name=\"$this->name\",lastname=\"$this->lastname\",address=\"$this->address\",phone=\"$this->phone\",email=\"$this->email\",password=\"$this->password\",gender=\"$this->gender\",day_of_birth=\"$this->day_of_birth\",sick=\"$this->sick\",medicaments=\"$this->medicaments\",alergy=\"$this->alergy\",cp=\"$this->cp\",pob=\"$this->pob\" where id=$this->id";
+		$noClean=preg_replace("/[^a-zA-Z0-9]/", '', $this->no);
+		$sql = "update ".self::$tablename." set no=\"$noClean\",image=\"$this->image\",name=\"$this->name\",lastname=\"$this->lastname\",address=\"$this->address\",phone=\"$this->phone\",email=\"$this->email\",password=\"$this->password\",gender=\"$this->gender\",day_of_birth=\"$this->day_of_birth\",sick=\"$this->sick\",medicaments=\"$this->medicaments\",alergy=\"$this->alergy\",cp=\"$this->cp\",pob=\"$this->pob\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
