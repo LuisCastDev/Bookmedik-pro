@@ -21,8 +21,8 @@ if(count($_POST)>0){
 		$user->gender = $_POST["gender"];
 		$user->day_of_birth = $_POST["day_of_birth"];
 	
-		$user->sick = $_POST["sick"];
-		$user->medicaments = $_POST["medicaments"];
+		
+		$user->record = $_POST["record"];
 		$user->alergy = $_POST["alergy"];
 	
 
@@ -32,6 +32,7 @@ if(count($_POST)>0){
 		$user->email = $_POST["email"];
 		$user->password = sha1(md5($_POST["password"]));
 		$user->phone = $_POST["phone"];
+		$user->physicalExam = $_POST["physicalExam"];
 		$user->add();
 
 		print "<script>window.location='index.php?view=pacients';</script>";

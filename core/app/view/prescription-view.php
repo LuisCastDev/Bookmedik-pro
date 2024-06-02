@@ -98,7 +98,7 @@ $payments = PaymentData::getAll();
   </div>
 
 
-      <div class="form-group">
+      <div class="form-group" hidden>
     <label for="inputEmail1" class="col-lg-2 control-label">Sintomas</label>
     <div class="col-lg-4">
     <textarea class="form-control" name="symtoms" placeholder="Sintomas"><?php echo $reservation->symtoms;?></textarea>
@@ -108,12 +108,12 @@ $payments = PaymentData::getAll();
     <textarea class="form-control" name="record" placeholder="Antecedentes del paciente"><?php echo $reservation->record;?></textarea>
     </div>
   </div>
-  <div class="form-group" >
+  <div class="form-group" hidden >
     <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>
     <div class="col-lg-10">
 <select name="status_id" class="form-control" required >
   <?php foreach($statuses as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->status_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
+    <option value="2"><?php echo $p->name; ?></option>
   <?php endforeach; ?>
 </select>
     </div>

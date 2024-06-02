@@ -23,7 +23,7 @@ $payments = PaymentData::getAll();
  
 
   </div>
-  <div class="form-group">
+<div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Paciente</label>
     <div class="col-lg-10">
 <select name="pacient_id" class="form-control" required>
@@ -44,8 +44,7 @@ $payments = PaymentData::getAll();
   <?php endforeach; ?>
 </select>
     </div>
-    <script>console.log("<?php echo CategoryData::getById(MedicData::getById($_SESSION["medic_id"])->category_id)->name;?>")</script>
-    
+  
     <div class="col-lg-7">
     <label for="inputEmail1" class="control-label">Medico</label>
 <select name="medic_id" id="medic_id" class="form-control" required>
@@ -140,13 +139,13 @@ $('#time_at')
 
 $.get("./?action=gethours","medic_id="+$("#medic_id").val()+"&date_at="+$("#date_at").val(),function(data){
   $("#time_at").html(data);
-          console.log((data));
+    //      console.log((data));
 
   });
 
 
   }
-        console.log((data));
+  //      console.log((data));
     }
   }
   );
@@ -166,7 +165,7 @@ $("#category_id").change(function(){
 
 $.get("./?action=getmedics","cat_id="+$("#category_id").val(),function(data){
   $("#medic_id").html(data);
-  console.log(data);
+ // console.log(data);
   });
 
 

@@ -94,21 +94,22 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Síntomas e Historia de la Enfermedad</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Historial medico</label>
     <div class="col-md-6">
-      <textarea name="sick" class="form-control" id="sick" placeholder="Síntomas e Historia de la Enfermedad"></textarea>
+      <textarea name="record" class="form-control" id="record" placeholder="Condicion e historial del paciente"></textarea>
     </div>
   </div>
+   
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Antecedentes del paciente</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Alergias</label>
     <div class="col-md-6">
-      <textarea name="medicaments" class="form-control" id="sick" placeholder="Antecedentes del paciente"></textarea>
+      <textarea name="alergy" class="form-control" id="alergy" placeholder="Alergias que presenta el presente"></textarea>
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Examen físico</label>
     <div class="col-md-6">
-      <textarea name="alergy" class="form-control" id="sick" placeholder="Examen físico"></textarea>
+      <textarea name="physicalExam" class="form-control" id="physicalExam" placeholder="Examen físico"></textarea>
     </div>
   </div>
   <p class="alert alert-info">* Campos obligatorios</p>

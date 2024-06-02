@@ -15,9 +15,9 @@ class PacientData {
 	public function add(){
 
 		
-		$sql = "insert into ".self::$tablename." (no,image,name,lastname,gender,day_of_birth,address, cp, pob, phone,email,password,sick,medicaments,alergy,created_at) ";
+		$sql = "insert into ".self::$tablename." (no,image,name,lastname,gender,day_of_birth,address, Medical_Insurance, pob, phone,email,password,sick,record,alergy,created_at,physicalExam) ";
 		$noClean=preg_replace("/[^a-zA-Z0-9]/", '', $this->no);
-		echo $sql .= "value (\"$noClean\",\"$this->image\",\"$this->name\",\"$this->lastname\",\"$this->gender\",\"$this->day_of_birth\",\"$this->address\",\"$this->cp\",\"$this->pob\",\"$this->phone\",\"$this->email\",\"$this->password\",\"$this->sick\",\"$this->medicaments\",\"$this->alergy\",$this->created_at)";
+		echo $sql .= "value (\"$noClean\",\"$this->image\",\"$this->name\",\"$this->lastname\",\"$this->gender\",\"$this->day_of_birth\",\"$this->address\",\"$this->cp\",\"$this->pob\",\"$this->phone\",\"$this->email\",\"$this->password\",\"$this->sick\",\"$this->record\",\"$this->alergy\",$this->created_at,\"$this->physicalExam\")";
 		Executor::doit($sql);
 	}
 
