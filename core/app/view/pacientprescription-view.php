@@ -1,7 +1,11 @@
 <section class="content">
 <?php
-$pacient = PacientData::getById($_GET["id"]);
+
+$reservation = ReservationData::getById($_GET["id"]);
+
+$pacient = PacientData::getById($reservation->pacient_id);
 ?>
+
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
@@ -15,7 +19,8 @@ $pacient = PacientData::getById($_GET["id"]);
 </div>
 -->
 </div>
-		<h1>Historial de Citas del Paciente</h1>
+<a href="index.php?view=pacienthistory&id=<?php echo $pacient->id;?>" class="btn btn-info btn-xs">Regresar</a>
+		  <h2><?php echo $reservation->title; ?></h2>
 <h4>Paciente: <?php echo $pacient->name." ".$pacient->lastname;?></h4>
 
 <div class="container mt-5 ">
@@ -28,24 +33,24 @@ $pacient = PacientData::getById($_GET["id"]);
         <input type="text" class="form-control" id="nombre" value="<?php echo $pacient->name." ".$pacient->lastname;?>" readonly>
       </div>
       <div class="col-md-3">
-        <label for="email" class="col-lg-8 control-label">Email:</label>
+        <label for="email" class="col-lg-8 control-label">Sexo:</label>
       </div>
       <div class="col-md-3">
-        <input type="email" class="form-control" id="email" value="<?php echo !empty($pacient->email)? $pacient->email : 'email@ejemplo.com';?>" readonly>
+      <input type="text" class="form-control" id="nombre" value="<?php echo $pacient->gender == 'h' ? 'Masculino':'Femenino';?>" readonly>
       </div>
     </div>
     <div class="form-group">
       <div class="col-md-3">
-        <label for="nombre" class="col-lg-8 control-label">Sexo:</label>
+        <label for="nombre" class="col-lg-8 control-label">Fecha de Nacimiento:</label>
       </div>
       <div class="col-md-3">
-        <input type="text" class="form-control" id="nombre" value="<?php echo $pacient->gender == 'h' ? 'Masculino':'Femenino';?>" readonly>
+      <input type="email" class="form-control" id="email" value="<?php echo $pacient->day_of_birth;?>" readonly>
       </div>
       <div class="col-md-3">
-        <label for="email" class="col-lg-8 control-label">Fecha de Nacimiento:</label>
+        <label for="nombre" class="col-lg-8 control-label">Seguro Medico:</label>
       </div>
       <div class="col-md-3">
-        <input type="email" class="form-control" id="email" value="<?php echo $pacient->day_of_birth;?>" readonly>
+        <input type="text" class="form-control" id="email" value="<?php echo $pacient->Medical_Insurance;?>" readonly>
       </div>
     </div>
     <div class="form-group">
@@ -56,10 +61,10 @@ $pacient = PacientData::getById($_GET["id"]);
         <input type="text" class="form-control" id="nombre" value="<?php echo $pacient->no;?>" readonly>
       </div>
       <div class="col-md-3">
-        <label for="nombre" class="col-lg-8 control-label">Seguro Medico:</label>
+        <label for="nombre" class="col-lg-8 control-label">Edad:</label>
       </div>
       <div class="col-md-3">
-        <input type="text" class="form-control" id="email" value="<?php echo $pacient->Medical_Insurance;?>" readonly>
+        <input type="text" class="form-control" id="edad" value="<?php echo Core::age($pacient->day_of_birth);?>" readonly>
       </div>
     </div>
     <div class="form-group mt-3">
@@ -93,66 +98,26 @@ $pacient = PacientData::getById($_GET["id"]);
     </div>
     <div class="form-group mt-3">
       <div class="col-md-3">
-        <label for="mensaje" class="col-lg-8 control-label">Antecedentes:</label>
+        <label for="mensaje" class="col-lg-8 control-label">Nota:</label>
       </div>
       <div class="col-md-9">
-        <textarea class="form-control" id="mensaje" rows="3" readonly><?php echo $pacient->record;?>.</textarea>
+        <textarea class="form-control" id="mensaje" rows="3" readonly><?php echo $reservation->note;?>.</textarea>
       </div>
     </div>
     <div class="form-group mt-3">
       <div class="col-md-3">
-        <label for="mensaje" class="col-lg-8 control-label">Examen fisico:</label>
+        <label for="mensaje" class="col-lg-8 control-label">Tratamiento:</label>
       </div>
       <div class="col-md-9">
-        <textarea class="form-control" id="mensaje" rows="3" readonly><?php echo $pacient->physicalExam?>.</textarea>
+        <textarea class="form-control" id="mensaje" rows="3" readonly><?php 
+        $meds = preg_replace('/[\[\]]/', '', $reservation->medicaments);
+        
+        echo preg_replace('/,/', ', ', $meds) ;?></textarea>
       </div>
     </div>
   </form>
 </div>
 
-<br>
-		<?php
-		$users = ReservationData::getAllByPacientId($_GET["id"]);
-		if(count($users)>0){
-			// si hay usuarios
-			?>
-			<div class="box box-primary">
-			<table class="table table-bordered table-hover">
-			<thead>
-			<th>Asunto</th>
-			<th>Nota</th>
-			<th>Fecha de cita</th>
-			<th>Accion</th>
-			</thead>
-			<?php
-			foreach($users as $user){
-				$pacient  = $user->getPacient();
-				$medic = $user->getMedic();
-				?>
-				<tr>
-				<td><?php echo $user->title; ?></td>
-				<td><?php echo $user->note; ?></td>
-			
-				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
-        <td style="width:270px;">
-				<!-- <a href="cesion.php?id= ?php echo $user->id;?>" target="_blank" class="btn btn-info btn-xs">Cesion de Datos</a> -->
-				<a href="index.php?view=pacientprescription&id=<?php echo $user->id;?>" class="btn btn-info btn-xs">Ver más</a>
-				</tr>
-				<?php
-
-			}
-?>
-</table>
-</div>
-<?php
-
-
-		}else{
-			echo "<p class='alert alert-danger'>No hay citas</p>";
-		}
-
-
-		?>
 
 
 	</div>

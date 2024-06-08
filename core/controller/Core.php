@@ -38,6 +38,18 @@ class Core {
 		echo "<script>alert('".$text."');</script>";
 	}
 
+
+	public static function age($dateOfBirth){
+		$dateOfBirthDT = new DateTime($dateOfBirth);
+		$currentDate = new DateTime();
+		$difference = $currentDate->diff($dateOfBirthDT);
+		
+		return $difference->y <= 0 ?  $difference->m." meses": $difference->y ." años";
+
+
+
+	}
+
 	public static function redir($url){
 		echo "<script>window.location='".$url."';</script>";
 	}
