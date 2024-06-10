@@ -117,7 +117,7 @@ $pacient = PacientData::getById($_GET["id"]);
 			// si hay usuarios
 			?>
 			<div class="box box-primary">
-			<table class="table table-bordered table-hover">
+			<table class="table table-bordered table-hover ">
 			<thead>
 			<th>Asunto</th>
 			<th>Nota</th>
@@ -131,7 +131,7 @@ $pacient = PacientData::getById($_GET["id"]);
 				?>
 				<tr>
 				<td><?php echo $user->title; ?></td>
-				<td><?php echo $user->note; ?></td>
+				<td class="overflow-hidden max" ><?php echo $user->note; ?></td>
 			
 				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
         <td style="width:270px;">

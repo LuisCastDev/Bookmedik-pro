@@ -47,10 +47,11 @@ $pacient = PacientData::getById($reservation->pacient_id);
       <input type="email" class="form-control" id="email" value="<?php echo $pacient->day_of_birth;?>" readonly>
       </div>
       <div class="col-md-3">
-        <label for="nombre" class="col-lg-8 control-label">Seguro Medico:</label>
+        <label for="nombre" class="col-lg-8 control-label">Edad:</label>
       </div>
       <div class="col-md-3">
-        <input type="text" class="form-control" id="email" value="<?php echo $pacient->Medical_Insurance;?>" readonly>
+        
+        <input type="text" class="form-control" id="edad" value="<?php echo Core::age($pacient->day_of_birth);?>" readonly>
       </div>
     </div>
     <div class="form-group">
@@ -61,10 +62,10 @@ $pacient = PacientData::getById($reservation->pacient_id);
         <input type="text" class="form-control" id="nombre" value="<?php echo $pacient->no;?>" readonly>
       </div>
       <div class="col-md-3">
-        <label for="nombre" class="col-lg-8 control-label">Edad:</label>
+        <label for="nombre" class="col-lg-8 control-label">Seguro Medico:</label>
       </div>
       <div class="col-md-3">
-        <input type="text" class="form-control" id="edad" value="<?php echo Core::age($pacient->day_of_birth);?>" readonly>
+      <input type="text" class="form-control" id="email" value="<?php echo $pacient->Medical_Insurance;?>" readonly>
       </div>
     </div>
     <div class="form-group mt-3">
@@ -75,33 +76,29 @@ $pacient = PacientData::getById($reservation->pacient_id);
         <input type="tel" class="form-control" id="telefono" value="<?php echo $pacient->phone;?>" readonly>
       </div>
       <div class="col-md-3">
-        <label for="direccion" class="col-lg-8 control-label">Dirección:</label>
+        <label for="direccion" class="col-lg-8 control-label">Fecha de consulta:</label>
       </div>
       <div class="col-md-3">
-        <input type="text" class="form-control" id="direccion" value="<?php echo $pacient->address?>" readonly>
+        <input type="text" class="form-control" id="direccion" value="<?php echo $reservation->date_at;?>" readonly>
       </div>
     </div>
     
-    <div class="form-group mt-3">
-      <div class="col-md-3">
-        <label for="telefono" class="col-lg-8 control-label">Ocupacion:</label>
-      </div>
-      <div class="col-md-3">
-        <input type="tel" class="form-control" id="telefono" value="<?php echo $pacient->pob;?>" readonly>
-      </div>
-      <div class="col-md-3">
-        <label for="direccion" class="col-lg-8 control-label">Alergias:</label>
-      </div>
-      <div class="col-md-3">
-        <input type="text" class="form-control" id="direccion" value="<?php echo $pacient->alergy?>" readonly>
-      </div>
-    </div>
+   
     <div class="form-group mt-3">
       <div class="col-md-3">
         <label for="mensaje" class="col-lg-8 control-label">Nota:</label>
       </div>
       <div class="col-md-9">
-        <textarea class="form-control" id="mensaje" rows="3" readonly><?php echo $reservation->note;?>.</textarea>
+        <textarea class="form-control"  id="mensaje" rows="3" readonly><?php echo $reservation->note;?>.</textarea>
+      </div>
+    </div>
+    <div class="form-group mt-3">
+      <div class="col-md-3">
+        <label for="mensaje" class="col-lg-8 control-label">Historial de la enfermedad:</label>
+      </div>
+      <div class="col-md-9">
+        <textarea class="form-control" id="mensaje" rows="3" readonly><?php 
+         echo $reservation->sick;?></textarea>
       </div>
     </div>
     <div class="form-group mt-3">
