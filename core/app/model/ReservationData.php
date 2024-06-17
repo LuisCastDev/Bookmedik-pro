@@ -26,17 +26,7 @@ class ReservationData {
 	// 	$password = "";
 	// 	$dbname = "bookmedikpro";
 		
-	// 	try{
-	// 		$executor2 = new $Executor2($servername,$username,$password,$dbname);
-	// 	$query = "insert into reservation (no,title,note,medic_id,date_at,time_at,pacient_id,user_id,price,status_id,payment_id,sick,symtoms,medicaments,created_at) values (:no,:title,:note,:medic,:date_at,:time_at,:pacient_id,:pacient_id,user_id,:price,:status_id,:payment_id,:sick,:symtoms,:medicaments,:created_at) ";
-	// 	$params = [":no"=>$this->no,":title"=>$this->title,":note"=>$this->note,
-	// 	":medic_id"=>$this->medic_id,":date_at"=>$this->date_at,":time_at"=>$this->time_at,":pacient_id"=>$this->pacient_id,":user_id"=>1,":price"=>$this->price,":status_id"=>$this->status_id,$this->payment_id,$this->sick,$this->symtoms,$this->medicaments,$this->created_at];
-	// 	return Executor::doit($sql);
-	// }
-
-
 	
-	// }
 
 	public function add(){
 		
@@ -66,7 +56,7 @@ class ReservationData {
 	}
 
 	public static function getById($id){
-		$sql = "select * from ".self::$tablename." where id=$id";
+		$sql = "select * from ".self::$tablename." where id=$id ORDER BY created_at DESC" ;
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new ReservationData());
 	}
@@ -99,7 +89,7 @@ class ReservationData {
 
 
 	public static function getPendingsDoctor($id){
-		$sql = "select * from ".self::$tablename." where status_id=1 and medic_id=$id";
+		$sql = "select * from ".self::$tablename." where status_id=1 and medic_id=$id ORDER BY CONCAT(date_at, ' ', time_at) DESC";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}

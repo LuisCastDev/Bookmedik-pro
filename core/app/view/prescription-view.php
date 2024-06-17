@@ -13,7 +13,12 @@ $payments = PaymentData::getAll();
 	<h1>Record Medico</h1>
   <hr>
 <form class="form-horizontal" id="prescription-form" role="form" method="post" action="./?action=updatereservation">
-  
+  <div class="form-group" hidden>
+    <label for="inputEmail1" class="col-lg-2 control-label">Cedula o Pasaporte.</label>
+    <div class="col-lg-10">
+      <input type="text" name="no" value="<?php echo $reservation->no; ?>"  class="form-control" id="inputEmail1" placeholder="Cod.">
+    </div>
+  </div>
 
 
   <div class="form-group">

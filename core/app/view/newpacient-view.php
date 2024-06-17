@@ -79,13 +79,13 @@
       <p class="help-block">Si el email esta vacio se inhabilita el acceso al paciente.</p>
     </div>
   </div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Password*</label>
     <div class="col-md-6">
       <input type="password" name="password" class="form-control" id="email1" placeholder="Password">
       <p class="help-block">Si el password esta vacio se inhabilita el acceso al paciente.</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Telefono*</label>

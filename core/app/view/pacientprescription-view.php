@@ -18,8 +18,9 @@ $pacient = PacientData::getById($reservation->pacient_id);
   </ul>
 </div>
 -->
+
 </div>
-<a href="index.php?view=pacienthistory&id=<?php echo $pacient->id;?>" class="btn btn-info btn-xs">Regresar</a>
+
 		  <h2><?php echo $reservation->title; ?></h2>
 <h4>Paciente: <?php echo $pacient->name." ".$pacient->lastname;?></h4>
 
@@ -114,7 +115,7 @@ $pacient = PacientData::getById($reservation->pacient_id);
     </div>
   </form>
 </div>
-
+<a href="index.php?view=pacienthistory&id=<?php echo $pacient->id;?>" class="btn btn-info btn-xs "><i class="bi bi-arrow-left-circle"></i>Regresar</a>
 
 
 	</div>

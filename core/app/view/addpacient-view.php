@@ -30,7 +30,6 @@ if(count($_POST)>0){
 		$user->cp = $_POST["cp"];
 		$user->pob = $_POST["pob"];
 		$user->email = $_POST["email"];
-		$user->password = sha1(md5($_POST["password"]));
 		$user->phone = $_POST["phone"];
 		$user->physicalExam = $_POST["physicalExam"];
 		$user->add();
