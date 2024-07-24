@@ -258,14 +258,14 @@ $(document).ready(function(){
         </form>
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->  
-            <?php elseif(isset($_GET["view"]) && $_GET["view"]=="mediclogin"):?>
+            <?php elseif(isset($_GET["view"]) && $_GET["view"]=="adminlogin"):?>
 <div class="login-box">
       <div class="login-logo">
-        <h4>ACCESO AL MEDICO</h4>
-        <a href="./?view=mediclogin"><b>CONTROL PACIENTES</b></a>
+        <h4>ACCESO AL ADMINISTRADOR</h4>
+        <a href="./?view=adminlogin"><b>CONTROL PACIENTES</b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <form action="./?action=processloginmedic" method="post">
+        <form action="./?action=processlogin" method="post">
           <div class="form-group has-feedback">
             <input type="text" name="username" required class="form-control" placeholder="Usuario"/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -291,7 +291,7 @@ $(document).ready(function(){
         <img src="logo.jpg" style="width: 320px">
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <form action="./?action=processlogin" method="post">
+        <form action="./?action=processloginmedic" method="post">
           <div class="form-group has-feedback">
             <input type="text" name="username" required class="form-control" placeholder="Usuario"/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -304,9 +304,9 @@ $(document).ready(function(){
 
             <div class="col-xs-12">
               <button type="submit" class="btn btn-primary btn-block btn-flat">Acceder</button>
-              <a href="./?view=pacientlogin" class="btn btn-default btn-block">Login Paciente</a>
-              <a href="./?view=mediclogin" class="btn btn-default btn-block">Login Medico</a>
-              <a href="./?view=pacientregister" class="btn btn-default btn-block">Registro de Pacientes</a>
+              <a href="./?view=pacientlogin" class="btn btn-default btn-block hidden">Login Paciente</a>
+              <a href="./?view=adminlogin" class="btn btn-default btn-block " hidden>Login Administrador</a>
+              <a href="./?view=pacientregister" class="btn btn-default btn-block hidden">Registro de Pacientes</a>
             </div><!-- /.col -->
           </div>
         </form>

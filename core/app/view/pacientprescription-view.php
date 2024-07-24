@@ -24,7 +24,7 @@ $pacient = PacientData::getById($reservation->pacient_id);
 		  <h2><?php echo $reservation->title; ?></h2>
 <h4>Paciente: <?php echo $pacient->name." ".$pacient->lastname;?></h4>
 
-<div class="container mt-5 ">
+<div class="container mt-5" style="margin-right:40%" >
   <form class="form-horizontal">
     <div class="form-group">
       <div class="col-md-3">
