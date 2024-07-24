@@ -20,10 +20,13 @@ if($found==true) {
 	print "Cargando ... $user";
 	print "<script>window.location='index.php?view=home';</script>";
 }else {
-	print "<script>window.location='index.php?view=login';</script>";
+	Core::alert("Usuario o Contraseña incorrectos");
+	print "<script>window.location='index.php?view=adminlogin';</script>";
+	
 }
 
 }else{
 	print "<script>window.location='index.php?view=home';</script>";	
+	
 }
 ?>

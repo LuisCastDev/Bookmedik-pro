@@ -27,7 +27,9 @@ if($found==true) {
 	print "Cargando ... $user";
 	print "<script>window.location='index.php?view=medicreservations';</script>";
 }else {
-	print "<script>window.location='index.php?view=mediclogin';</script>";
+	Core::alert("Usuario o Contraseña incorrectos");
+	print "<script>window.location='index.php?view=login';</script>";
+
 }
 
 }else{
