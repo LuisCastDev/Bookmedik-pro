@@ -3,7 +3,7 @@
 	<div class="col-md-12">
 <div class="btn-group pull-right">
 </div>
-		<h1>Mis Citas</h1>
+		<h1>Consultas</h1>
 <br>
 <form class="form-horizontal" role="form">
 <input type="hidden" name="view" value="pacientreservations">
