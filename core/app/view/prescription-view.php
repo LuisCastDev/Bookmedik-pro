@@ -10,7 +10,7 @@ $payments = PaymentData::getAll();
 
 <div class="row">
 	<div class="col-md-10">
-	<h1>Record Medico</h1>
+	<h1>Récord Médico</h1>
   <hr>
 <form class="form-horizontal" id="prescription-form" role="form" method="post" action="./?action=updatereservation">
   <div class="form-group" hidden>
