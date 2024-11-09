@@ -158,10 +158,10 @@ $(document).ready(function(){
               <li><a href="./?view=medichome"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
               
             <li><a href="./?view=pacients"><i class='fa fa-male'></i> <span>Pacientes</span></a></li>
-            <li><a href="./?view=newreservation2"><i class='fa fa-asterisk'></i> <span>Nueva Cita</span></a></li>
+            <li><a href="./?view=newreservation2"><i class='fa fa-asterisk'></i> <span>Crear Cita</span></a></li>
             
             
-            <li><a href="./?view=medicreservations"><i class='fa fa-calendar'></i> <span>Citas</span></a></li>
+            <li><a href="./?view=medicreservations"><i class='fa fa-calendar'></i> <span>Citas/Consultas</span></a></li>
             <!-- <li><a href="./?view=medicreservations"><i class='far fa-edit'></i> <span>Consultar paciente</span></a></li> -->
             <li><a href="./?view=medicreports"><i class='fa fa-area-chart'></i> <span>Reportes</span></a></li>
             

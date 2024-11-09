@@ -36,7 +36,7 @@ for($i=$sd;$i<=$ed;$i+=(60*60*24)){
             <span class="info-box-icon bg-purple"><i class="fa fa-calendar"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Citas</span>
+              <span class="info-box-text">Citas/Consultas</span>
               <span class="info-box-number"><?php echo count(ReservationData::getAll());?></span>
             </div>
             <!-- /.info-box-content -->

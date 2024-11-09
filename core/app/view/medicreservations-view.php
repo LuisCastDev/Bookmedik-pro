@@ -20,7 +20,7 @@ $(document).ready(function() {
 });
 </script>
 </div>
-		<h1>Mis Citas</h1>
+		<h1>Consultas</h1>
 <br>
 <form class="form-horizontal" role="form">
 <input type="hidden" name="view" value="medicreservations">

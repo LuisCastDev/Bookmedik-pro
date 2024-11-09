@@ -17,6 +17,7 @@ $n = date('N',strtotime($now));
 <div class="row">
 <div class="col-md-12">
 <h1>Calendario por dia</h1>
+<h1>Calendario por día</h1>
 
 
 <div class="box box-primary">

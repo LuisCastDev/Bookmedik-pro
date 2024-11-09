@@ -58,7 +58,8 @@
 				<a href="index.php?view=pacienthistory&id=<?php echo $user->id;?>" class="btn btn-info btn-xs">Historial</a>
 					
 
-				<a href="index.php?view=editpacient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
+				<a href="index.php?view=editpacient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>				
+				<a href="index.php?view=pacient&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Archivos</a>
 				<a href="index.php?view=delpacient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
 			
 				</td>

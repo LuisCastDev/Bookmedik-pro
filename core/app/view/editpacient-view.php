@@ -101,21 +101,21 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Síntomas e Historia de la Enfermedad</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Historial Medico</label>
     <div class="col-md-6">
-      <textarea name="sick" class="form-control" id="sick" placeholder="Síntomas e Historia de la Enfermedad"><?php echo $user->sick;?></textarea>
+      <textarea name="record" class="form-control" id="record" placeholder="Historial Medico"><?php echo $user->record;?></textarea>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Antecedentes del paciente</label>
+    <label for="inputEmail1" class="col-lg-2 control-label" >Examen Físico</label>
     <div class="col-md-6">
-      <textarea name="medicaments" class="form-control" id="sick" placeholder="Antecedentes del paciente"><?php echo $user->medicaments;?></textarea>
+      <textarea name="physicalExam" required class="form-control" id="physicalExam" placeholder="Examen Físico"><?php echo $user->physicalExam;?></textarea>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Examen físico</label>
+    <label for="inputEmail1"  required class="col-lg-2 control-label">Alergias</label>
     <div class="col-md-6">
-      <textarea name="alergy" class="form-control" id="sick" placeholder="Examen físico"><?php echo $user->alergy;?></textarea>
+      <textarea name="alergy" class="form-control" required id="alergy" placeholder="Alergias"><?php echo $user->alergy;?></textarea>
     </div>
   </div>
 

@@ -64,7 +64,7 @@ class PacientData {
 
 	public function update(){
 		$noClean=preg_replace("/[^a-zA-Z0-9]/", '', $this->no);
-		$sql = "update ".self::$tablename." set no=\"$noClean\",image=\"$this->image\",name=\"$this->name\",lastname=\"$this->lastname\",address=\"$this->address\",phone=\"$this->phone\",email=\"$this->email\",password=\"$this->password\",gender=\"$this->gender\",day_of_birth=\"$this->day_of_birth\",sick=\"$this->sick\",medicaments=\"$this->medicaments\",alergy=\"$this->alergy\",cp=\"$this->cp\",pob=\"$this->pob\" where id=$this->id";
+		$sql = "update ".self::$tablename." set no=\"$noClean\",image=\"$this->image\",name=\"$this->name\",lastname=\"$this->lastname\",address=\"$this->address\",phone=\"$this->phone\",email=\"$this->email\",password=\"$this->password\",gender=\"$this->gender\",day_of_birth=\"$this->day_of_birth\",record=\"$this->record\",physicalExam=\"$this->physicalExam\",alergy=\"$this->alergy\",cp=\"$this->cp\",pob=\"$this->pob\" where id=$this->id";
 		Executor::doit($sql);
 	}
 

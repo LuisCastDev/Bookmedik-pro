@@ -20,8 +20,8 @@ if(count($_POST)>0){
 	$user->gender = $_POST["gender"];
 	$user->day_of_birth = $_POST["day_of_birth"];
 	
-	$user->sick = $_POST["sick"];
-	$user->medicaments = $_POST["medicaments"];
+	$user->record = $_POST["record"];
+	$user->physicalExam = $_POST["physicalExam"];
 	$user->alergy = $_POST["alergy"];
 
 
