@@ -1,7 +1,7 @@
 <div class="row">
 <div class="col-md-12">
 <h1>Sistema de Citas Medicas</h1>
-<p>Bienvenido a <b>BookMedik</b> un Sistema de Citas Medicas util para consultorios medicos y/o medicos independientes.</p>
+<p>Bienvenido a <b>COntrol Pacientes</b> un Sistema de Citas Medicas util para consultorios medicos y/o medicos independientes.</p>
 <h4> v2.0</h4>
 <ul>
 	<li>Nuevos campos en pacientes: genero, fecha de nacimiento, Síntomas e Historia de la Enfermedad, medicamento, Examen físico</li>
@@ -25,6 +25,6 @@
 	<li>Historial de Citas por Medico</li>
 	<li>Buscador avanzado por : Palabra clave, medico, paciente y fecha.</li>
 </ul>
-<p>Support IT SRL &copy; 2015</p>
+<p>Support IT SRL &copy; 2022</p>
 </div>
 </div>

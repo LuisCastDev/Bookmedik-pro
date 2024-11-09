@@ -11,9 +11,9 @@
 		/*
 		$u = new UserData();
 		print_r($u);
-		$u->name = "Agustin";
-		$u->lastname = "Ramos";
-		$u->email = "Support IT SRL@gmail.com";
+		$u->name = "Jorge";
+		$u->lastname = "De La Cruz";
+		$u->email = "getsopporte@gmail.com";
 		$u->password = sha1(md5("l00lapal00za"));
 		$u->add();
 
